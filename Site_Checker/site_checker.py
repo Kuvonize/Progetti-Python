@@ -13,7 +13,7 @@ while True:
         mail=True
         indirizzo_mail=input('A quale indirizzo vuoi ricevere le notifiche?: ')
         try:
-            psw=getpass.getpass('Inserisci la password (servirà una password app, se non ne sei in possesso vai qui https://myaccount.google.com/apppasswords): ')
+            psw=input('Inserisci la password (servirà una password app, se non ne sei in possesso vai qui https://myaccount.google.com/apppasswords): ')
             break
         except Exception:
             psw=input('Inserisci la password (servirà una password app, se non ne sei in possesso vai qui https://myaccount.google.com/apppasswords): ')
