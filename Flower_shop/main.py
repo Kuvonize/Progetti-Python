@@ -26,6 +26,10 @@ girasole_giallo=inventario.cerca_fiore('girasole','giallo')
 dizionario_fiori={rosa_rossa:3,tulipano_giallo:2,girasole_giallo:1}
 
 bouquet1=Bouquet('Romantic Mix',dizionario_fiori)
+bouquet2=Bouquet('Spring Delight',{'tulipano':2,'margherita':3})
+
+print(bouquet1)
+print(bouquet2)
 
 if bouquet1.verifica_disponibilita():
     bouquet1.consuma_fiori()
@@ -34,9 +38,11 @@ else:
     print('Attenzione: non si sono abbastanza fiori per comporre il bouquet!')
 
 da_riordinare=inventario.fiori_da_riordinare(15)
+
 if len(da_riordinare)>0:
     for fiore in da_riordinare:
         print(fiore)
 else:
-    print('Hai ancora abbastanza fiori a disposizione')    
+    print('Hai ancora abbastanza fiori a disposizione')  
+          
 
