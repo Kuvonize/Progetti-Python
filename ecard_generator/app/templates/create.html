@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/create" method="POST">
+<label>Scegli sfondo:</label>    
+<input type="radio" name="sfondo" value="montagna.jpg"
+  {{ 'checked' if valori.get('sfondo') == 'montagna.jpg' else '' }} required> Montagna 
+<input type="radio" name="sfondo" value="mare.jpg"
+  {{ 'checked' if valori.get('sfondo') == 'mare.jpg' else '' }} required> Mare
+<label>Scegli cosa scrivere:</label>
+<select name="motto">
+    {% for q in quotes %}
+        <option value="{{ q.text }}" {{ 'selected' if valori.get('motto') == q.text else '' }}>
+            {{ q.text }}
+        </option>        
+    {% endfor %}                
+</select>
+<label>Scegli opzioni testo:</label>
+<textarea name="testo" maxlength="300">{{ valori.get('testo','') }}</textarea>
+<select name="font">
+    <option value="OpenSans-Regular.ttf">Open Sans</option>
+    <option value="Lora-Regular.ttf">Lora</option>
+</select>
+<input type="number" name="dimensione" min="12" max="72" value="36">
+<label>Scegli colore:</label>
+<select name="colore">
+    <option value="black" {{ 'selected' if valori.get('colore')=='black' else '' }}>Nero</option>
+    <option value="white" {{ 'selected' if valori.get('colore')=='white' else '' }}>Bianco</option>
+    <option value="red"   {{ 'selected' if valori.get('colore')=='red'   else '' }}>Rosso</option>
+</select>
+<label>Scegli dove posizionare la scritta:</label>
+<select name="allineamento">
+    <option value="center" {{ 'selected' if valori.get('allineamento')=='center' else '' }}>Centrato</option>
+    <option value="left"   {{ 'selected' if valori.get('allineamento')=='left'   else '' }}>Sinistra</option>    
+</select>
+<label>Inserisci mittente e destinatario:</label>
+<input type="text" name="da" value="{{ valori.get('da','') }}">
+<input type="text" name="per" value="{{ valori.get('per','') }}" placeholder="Destinatario">
+<button type="submit">Genera e-card</button>
+</form>
+{% endblock %}

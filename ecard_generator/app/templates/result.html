@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>La tua e-card</h1>
+<img src="{{ url_for('serve_generated', nomefile=image_name) }}" alt="E-Card generata">
+<p><a href="{{ url_for('create') }}">Crea un'altra e-card</a></p>
+<a href="{{ url_for('download_card', nomefile=image_name) }}">Scarica PNG</a>
+{% endblock %}

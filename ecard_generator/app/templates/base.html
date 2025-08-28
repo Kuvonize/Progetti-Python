@@ -1,0 +1,12 @@
+{% with msgs=get_flashed_messages(with_categories=true) %}
+{% if msgs %}
+    <ul class="flash">
+        {% for cat, m in msgs %}
+            <li class="{{ cat }}">{{ m }}</li>
+        {% endfor %}    
+    </ul>
+    {% endif %}
+{% endwith %}    
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block content %}{% endblock %}
