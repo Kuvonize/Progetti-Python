@@ -1,2 +1,30 @@
-Site_Checker/monitoraggio.log
-test.bin
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# --- Ambienti virtuali ---
+.venv/
+venv/
+env/
+
+# --- Segreti / configurazione locale ---
+.env
+!.env.example
+
+# --- Editor / OS ---
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# --- Dati generati a runtime ---
+*.log
+*.db
+*.bin
+ecard_generator/generated/
+Mail_checker/id_letti.txt
+
+# --- File di esempio protetti da copyright (tienili solo in locale) ---
+Mp3_tagger/samples/
